@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 
 const PostStyle = styled.div`
-  text-align: right;
+  text-align: left;
+  padding: 1rem;
 `
 
 const PostHeader = ({ children }) => (
@@ -52,7 +53,11 @@ const Post = () => {
         name="body"
         onChange={onChange}
       />
-      <PostStyle>Hello</PostStyle>
+      <div>
+        <button onClick={() => { console.log(values) }}>
+          Submit
+        </button>
+      </div>
     </PostStyle>
   )
 }
