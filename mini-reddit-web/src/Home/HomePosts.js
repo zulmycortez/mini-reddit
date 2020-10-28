@@ -5,16 +5,24 @@ import HomePostsStyle from './HomePostsStyle'
 
 const HomePost = () => {
   const [posts, setPosts] = useState([])
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
+    setLoading(true)
     axios.get('http://localhost:8080/posts')
-      .then(res => { setPosts(res) })
-      .catch(() => { setPosts(mockPosts) })
-  })
+      .then(res => {
+        setLoading(false)
+        setPosts(res);
+      })
+      .catch(() => {
+        setLoading(false)
+        setPosts(mockPosts)
+      })
+  }, [posts])
 
-  console.log(posts)
   return (
     <HomePostsStyle>
+      {loading && 'Loading...'}
       {posts.map(item => (
         <div 
           key={item.id}
