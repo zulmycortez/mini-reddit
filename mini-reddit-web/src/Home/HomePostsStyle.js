@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 const HomePostsStyle = styled.div`
- padding: 1rem;
   .post {
     border-radius: .25rem;
     background-color: #d1d1d1;

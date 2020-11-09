@@ -18,7 +18,7 @@ const HomePost = () => {
         setLoading(false)
         setPosts(mockPosts)
       })
-  }, [posts])
+  }, [])
 
   return (
     <HomePostsStyle>

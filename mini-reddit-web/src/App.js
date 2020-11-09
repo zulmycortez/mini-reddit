@@ -1,14 +1,18 @@
 import React from 'react'
 import Home from './Home/Home'
 import Header from './Header/Header'
+import { DarkModeProvider } from './DarkModeContext'
+import AppStyle from './AppStyle'
 
-function App() {
+const App = () => {
   return (
-    <div className="__app">
-      <Header />
-      <Home />
-    </div>
-  );
+    <DarkModeProvider>
+      <AppStyle>
+        <Header />
+        <Home />
+      </AppStyle>
+    </DarkModeProvider>
+  )
 }
 
 export default App;
